@@ -243,7 +243,7 @@ public abstract class DialogFragmentController implements AuthorizationDialogCon
             }
             dismissDialog();
             if (error != null) {
-                if (TextUtils.equals(ERROR_USER_CANCELLED, error)) {
+                if (error.startsWith(ERROR_USER_CANCELLED) || error.startsWith(ERROR_ACCESS_DENIED)) {
                     throw new CancellationException("User authorization failed (" + error + ")");
                 } else {
                     throw new IOException("User authorization failed (" + error + ")");
@@ -264,7 +264,7 @@ public abstract class DialogFragmentController implements AuthorizationDialogCon
             }
             dismissDialog();
             if (error != null) {
-                if (TextUtils.equals(ERROR_USER_CANCELLED, error)) {
+                if (error.startsWith(ERROR_USER_CANCELLED) || error.startsWith(ERROR_ACCESS_DENIED)) {
                     throw new CancellationException("User authorization failed (" + error + ")");
                 } else {
                     throw new IOException("User authorization failed (" + error + ")");
