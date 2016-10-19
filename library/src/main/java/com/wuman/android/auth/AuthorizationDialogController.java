@@ -93,4 +93,12 @@ public interface AuthorizationDialogController extends AuthorizationUIController
      */
     boolean removePreviousCookie();
 
+    /**
+     * Indicate whether the webclient associated to the web view should override
+     * the loading of an URL.
+     *
+     * @return {@code true} if the URL loading is overriden, {@code false}
+     *         otherwise.
+     */
+    boolean shouldOverrideUrlLoading(WebView view, String url);
 }
