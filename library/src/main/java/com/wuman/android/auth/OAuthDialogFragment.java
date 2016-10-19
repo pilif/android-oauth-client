@@ -313,6 +313,7 @@ class OAuthDialogFragment extends DialogFragmentCompat {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 LOGGER.info("shouldOverrideUrlLoading: " + url);
+                if (mController.shouldOverrideUrlLoading(view, url)) return true;
                 interceptUrlCompat(view, url, true);
                 return true;
             }

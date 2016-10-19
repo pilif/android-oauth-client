@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import com.google.api.client.auth.oauth.OAuthAuthorizeTemporaryTokenUrl;
 import com.google.api.client.auth.oauth2.AuthorizationCodeRequestUrl;
@@ -299,4 +300,8 @@ public abstract class DialogFragmentController implements AuthorizationDialogCon
         return false;
     }
 
+    @Override
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        return false;
+    }
 }
